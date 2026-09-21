@@ -1,0 +1,14 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ederson Serafim">
+  <rect width="200" height="200" fill="#326586"/>
+  <g transform="translate(42.0,42.0) scale(1.16)" fill="#F4E9D4">
+      <rect x="10" y="12" width="14" height="76" rx="3"/>
+      <rect x="10" y="12" width="38" height="14" rx="3"/>
+      <rect x="10" y="43" width="30" height="14" rx="3"/>
+      <rect x="10" y="74" width="38" height="14" rx="3"/>
+      <rect x="54" y="12" width="36" height="14" rx="3"/>
+      <rect x="54" y="12" width="14" height="30" rx="3"/>
+      <rect x="54" y="43" width="36" height="14" rx="3"/>
+      <rect x="76" y="43" width="14" height="45" rx="3"/>
+      <rect x="54" y="74" width="36" height="14" rx="3"/>
+    </g>
+</svg>

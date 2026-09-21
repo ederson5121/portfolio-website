@@ -1,0 +1,20 @@
+# Sistema operativo / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+
+# Logs e ficheiros temporários
+*.log
+*.tmp
+
+# Futuro backend PHP (Fase 2) — dependências e configuração local
+/vendor/
+composer.phar
+.env
+.env.local
+
+# Node (caso alguma ferramenta de build venha a ser usada)
+node_modules/

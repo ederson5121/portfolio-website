@@ -1,0 +1,67 @@
+/* ============================================================
+   Ederson Serafim — Portfolio
+   Responsivo — mobile-first, todas as media queries num só lugar
+   para serem fáceis de auditar.
+   Testado visualmente para: 320 / 375 / 430 / 768 / 1024 / 1440 / 1920
+   ============================================================ */
+
+/* ~480px — telas pequenas ganham um pouco mais de respiro */
+@media (min-width: 480px) {
+  .hero__actions { flex-wrap: nowrap; }
+  .contact__social { flex-wrap: nowrap; }
+}
+
+/* ~640px — grelhas de 2 colunas onde já cabe confortavelmente */
+@media (min-width: 640px) {
+  .skills__grid { grid-template-columns: repeat(2, 1fr); }
+  .about__badges { flex-direction: row; }
+}
+
+/* 768px — Tablet: projetos em 2 colunas */
+@media (min-width: 768px) {
+  .projects__grid { grid-template-columns: repeat(2, 1fr); }
+  .project-card:nth-child(3) { grid-column: 1 / -1; }
+  .project-card:nth-child(3) .project-card__highlights { columns: 2; column-gap: 2rem; }
+}
+
+/* 1024px — Laptop: navbar completa, hero e grelhas a 2-3 colunas.
+   Entre 768–1023px (tablet) o menu hamburger mantém-se: com 4
+   links + CV + CTA + toggle de tema, ficaria apertado demais num
+   ecrã tablet em retrato. */
+@media (min-width: 1024px) {
+  .navbar__nav { display: block; }
+  .navbar__actions > .theme-toggle,
+  .navbar__actions > .navbar__cv { display: inline-flex; }
+  .navbar__cta { display: inline-flex; }
+  .menu-toggle { display: none; }
+  .mobile-menu { display: none; }
+
+  .hero__inner { grid-template-columns: 1.15fr .85fr; gap: 4rem; }
+
+  .about__grid { grid-template-columns: 1.5fr 1fr; gap: 3rem; }
+  .about__badges { flex-direction: column; align-items: flex-start; }
+
+  .skills__grid { grid-template-columns: repeat(3, 1fr); }
+
+  .projects__grid { grid-template-columns: repeat(3, 1fr); }
+  .project-card:nth-child(3) { grid-column: auto; }
+  .project-card__highlights { columns: 1; }
+  .project-card:nth-child(2) .project-card__highlights { columns: 2; column-gap: 1.5rem; }
+  .project-card__highlights li { break-inside: avoid; }
+
+  .contact__grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .contact__info { padding-top: .5rem; }
+}
+
+/* Abaixo de 1024px: navbar completa e CTA de texto ficam
+   escondidos — só o logo, o CV e o hamburger são visíveis. */
+@media (max-width: 1023.98px) {
+  .navbar__nav, .navbar__cta { display: none; }
+}
+
+/* 1440px / 1920px — Desktop grande: mais respiro lateral, sem
+   esticar o conteúdo para além do que é confortável de ler */
+@media (min-width: 1440px) {
+  .container { padding-inline: 2rem; }
+  .hero__inner { gap: 5rem; }
+}

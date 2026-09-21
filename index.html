@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Ederson Serafim | Desenvolvedor Web Júnior</title>
+  <meta name="description" content="Portfólio de Ederson Serafim, estudante de Gestão de Sistemas Informáticos com foco em desenvolvimento web, sistemas, redes e tecnologia.">
+  <meta name="author" content="Ederson Serafim">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ederson Serafim | Desenvolvedor Web Júnior">
+  <meta property="og:description" content="Portfólio de Ederson Serafim, estudante de Gestão de Sistemas Informáticos com foco em desenvolvimento web, sistemas, redes e tecnologia.">
+  <meta property="og:image" content="assets/favicon/apple-touch-icon.png">
+  <meta property="og:locale" content="pt_AO">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Favicons (conjunto oficial da marca) -->
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/favicon/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <meta name="theme-color" content="#FAF8F3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1E2A33" media="(prefers-color-scheme: dark)">
+
+  <!-- Fontes self-hosted: pré-carregar só os pesos críticos acima da dobra.
+       Sem Google Fonts, sem qualquer CDN — self-hosting total, decisão
+       deliberada para as condições de rede em Angola. -->
+  <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Rede de segurança sem JavaScript: o loader só desaparece via JS, e o
+       conteúdo com [data-reveal] só aparece via IntersectionObserver. Sem
+       isto, uma visita sem JS ficaria presa num ecrã de loading vazio. -->
+  <noscript>
+    <style>
+      .loader { display: none !important; }
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .mobile-menu { display: none !important; }
+      .menu-toggle { display: none !important; }
+      .navbar__nav, .navbar__cta, .navbar__actions > .navbar__cv { display: flex !important; }
+      .navbar__links { display: flex !important; }
+    </style>
+  </noscript>
+
+  <!-- Dados estruturados: só campos com informação já presente na página -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ederson Serafim",
+    "jobTitle": "Desenvolvedor Web Júnior",
+    "description": "Estudante de Gestão de Sistemas Informáticos com foco em desenvolvimento web, sistemas, redes e tecnologia.",
+    "image": "assets/images/avatar.svg",
+    "email": "mailto:edersonserafim777@gmail.com",
+    "telephone": "+244943001722",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Luanda",
+      "addressCountry": "Angola"
+    }
+  }
+  </script>
+
+  <!-- Aplicar o tema guardado antes do primeiro paint, para evitar flash de tema errado -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('es-theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Sprite de ícones — reutilizados via <use> em toda a página -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4.2"></circle>
+        <path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"></path>
+      </symbol>
+      <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19.8 14.5c-4.6 1.3-9-2.5-8.6-7.2.1-1.6.7-3.1 1.6-4.3C8.2 3.7 4.5 7.7 4.5 12.4c0 5.1 4.1 9.2 9.2 9.2 4 0 7.4-2.5 8.7-6.1-.8.5-1.7.8-2.6 1z"></path>
+      </symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5.5" width="18" height="13" rx="2"></rect>
+        <path d="M3.5 6.5l8.5 6 8.5-6"></path>
+      </symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.1c.3-.3.7-.4 1.1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.3c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1.1L6.6 10.8z"></path>
+      </symbol>
+      <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21.5s7.2-7.3 7.2-12.7a7.2 7.2 0 1 0-14.4 0c0 5.4 7.2 12.7 7.2 12.7z"></path>
+        <circle cx="12" cy="8.8" r="2.4"></circle>
+      </symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <path d="M12 2.2c-5.5 0-10 4.5-10 10 0 4.4 2.9 8.2 6.8 9.5.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.1-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-4.9 0-1.1.4-1.9 1-2.6-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.5-.3s1.7.1 2.5.3c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.6 0 3.8-2.3 4.6-4.6 4.9.3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5 3.9-1.3 6.8-5 6.8-9.5 0-5.5-4.5-10-10-10z"></path>
+      </symbol>
+      <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="4"></rect>
+        <g fill="var(--color-bg-elevated)">
+          <rect x="5.7" y="9.7" width="2.6" height="8.6" rx="0.4"></rect>
+          <circle cx="7" cy="6.4" r="1.6"></circle>
+          <path d="M11.4 9.7h2.5v1.3c.5-.8 1.4-1.5 2.9-1.5 2.3 0 3.5 1.5 3.5 4.2v4.6H17.7v-4.1c0-1.3-.5-2.1-1.6-2.1-1 0-1.6.7-1.8 1.4-.1.2-.1.5-.1.8v4h-2.6c0-.1.1-7.8 0-8.6z"></path>
+        </g>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 17L17 7M8 7h9v9"></path>
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9.2"></circle>
+        <path d="M7.8 12.3l2.7 2.7 5.7-6"></path>
+      </symbol>
+      <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9.2"></circle>
+        <path d="M12 7.5v5.4"></path>
+        <circle cx="12" cy="16.3" r="0.15" fill="currentColor"></circle>
+      </symbol>
+      <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M12 7.2V12l3.3 2"></path>
+      </symbol>
+      <symbol id="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12.5M12 15.5l-4.2-4.2M12 15.5l4.2-4.2"></path>
+        <path d="M4.5 16.5v2.3c0 1.2.9 2.2 2.1 2.2h10.8c1.2 0 2.1-1 2.1-2.2v-2.3"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Loading screen — loader-mark.svg é estático; a animação vive no CSS -->
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader__inner">
+      <img
+        src="assets/images/loader-mark.svg"
+        alt="Ederson Serafim — Gestão de Sistemas Informáticos"
+        class="loader__mark"
+        width="480" height="329"
+      >
+      <div class="loader__bar" aria-hidden="true"><span class="loader__bar-fill"></span></div>
+    </div>
+  </div>
+
+  <a class="skip-link" href="#main">Saltar para o conteúdo principal</a>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#top" class="navbar__brand" aria-label="Ederson Serafim — voltar ao topo">
+        <img src="assets/logo/logo-primary-light.svg" alt="Ederson Serafim" class="navbar__logo navbar__logo--light" width="181" height="32">
+        <img src="assets/logo/logo-primary-dark-transparent.svg" alt="Ederson Serafim" class="navbar__logo navbar__logo--dark" width="181" height="32">
+      </a>
+
+      <nav class="navbar__nav" aria-label="Navegação principal">
+        <ul class="navbar__links">
+          <li><a href="#sobre" class="navbar__link" data-nav-link>Sobre</a></li>
+          <li><a href="#skills" class="navbar__link" data-nav-link>Skills</a></li>
+          <li><a href="#projetos" class="navbar__link" data-nav-link>Projetos</a></li>
+          <li><a href="#formacao" class="navbar__link" data-nav-link>Percurso</a></li>
+          <li><a href="#contacto" class="navbar__link" data-nav-link>Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <button type="button" class="icon-btn theme-toggle" id="themeToggle" aria-label="Ativar tema escuro" aria-pressed="false">
+          <svg class="icon theme-toggle__sun"><use href="#icon-sun"></use></svg>
+          <svg class="icon theme-toggle__moon"><use href="#icon-moon"></use></svg>
+        </button>
+        <a href="assets/cv/Ederson-Serafim-Malanda-CV.pdf" download="Ederson-Serafim-Malanda-CV.pdf" class="icon-btn navbar__cv" aria-label="Baixar currículo em PDF">
+          <svg class="icon"><use href="#icon-download"></use></svg>
+        </a>
+        <a href="#contacto" class="btn btn--primary navbar__cta">Vamos conversar</a>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Painel mobile — FORA do <header>: o header tem backdrop-filter, que
+       cria um novo containing block para descendentes position:fixed e
+       quebraria este overlay. -->
+  <div class="mobile-menu" id="mobileMenu">
+      <nav aria-label="Navegação mobile">
+        <ul class="mobile-menu__links">
+          <li><a href="#sobre" data-nav-link data-mobile-link>Sobre</a></li>
+          <li><a href="#skills" data-nav-link data-mobile-link>Skills</a></li>
+          <li><a href="#projetos" data-nav-link data-mobile-link>Projetos</a></li>
+          <li><a href="#formacao" data-nav-link data-mobile-link>Percurso</a></li>
+          <li><a href="#contacto" data-nav-link data-mobile-link>Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__footer">
+        <button type="button" class="icon-btn theme-toggle" id="themeToggleMobile" aria-label="Ativar tema escuro" aria-pressed="false">
+          <svg class="icon theme-toggle__sun"><use href="#icon-sun"></use></svg>
+          <svg class="icon theme-toggle__moon"><use href="#icon-moon"></use></svg>
+          <span>Tema</span>
+        </button>
+        <a href="assets/cv/Ederson-Serafim-Malanda-CV.pdf" download="Ederson-Serafim-Malanda-CV.pdf" class="btn btn--ghost" data-mobile-link>
+          <svg class="icon"><use href="#icon-download"></use></svg>CV
+        </a>
+        <a href="#contacto" class="btn btn--primary" data-mobile-link>Conversar</a>
+      </div>
+  </div>
+  <!-- fim do painel mobile -->
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="top">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content" data-reveal>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Luanda, Angola</p>
+          <h1 class="hero__title">Olá, eu sou<br><span class="hero__name">Ederson Serafim</span>.</h1>
+          <p class="hero__role">Desenvolvedor Web Júnior &amp; Estudante de Sistemas Informáticos</p>
+          <p class="hero__lede">Construo soluções digitais enquanto desenvolvo continuamente as minhas competências em desenvolvimento web, sistemas, redes e tecnologia.</p>
+          <p class="hero__philosophy"><span class="hero__philosophy-rule" aria-hidden="true"></span>Always Learning. Always Building.</p>
+          <div class="hero__actions">
+            <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+            <a href="assets/cv/Ederson-Serafim-Malanda-CV.pdf" download="Ederson-Serafim-Malanda-CV.pdf" class="btn btn--ghost">
+              <svg class="icon"><use href="#icon-download"></use></svg>Baixar currículo
+            </a>
+          </div>
+        </div>
+        <div class="hero__visual" data-reveal>
+          <div class="hero__avatar-frame">
+            <img src="assets/images/avatar.svg" alt="Monograma ES — símbolo de Ederson Serafim" class="hero__avatar" width="200" height="200">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE ===================== -->
+    <section class="about" id="sobre">
+      <div class="container">
+        <p class="eyebrow" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Sobre</p>
+        <h2 class="section-title" data-reveal>Estudante de sistemas, a construir com propósito.</h2>
+        <div class="about__grid">
+          <div class="about__text" data-reveal>
+            <p>Sou estudante de Gestão de Sistemas Informáticos e Tecnologias de Informação, com uma curiosidade natural por perceber como as coisas funcionam por dentro — de uma aplicação web a uma rede local. O meu interesse por tecnologia foi crescendo através da prática: instalar e configurar sistemas, escrever código, montar redes e resolver problemas técnicos reais.</p>
+            <p>Cada projeto académico ou pessoal é, para mim, uma oportunidade de aprender fazendo. Gosto de perceber a lógica por trás de um sistema antes de o construir — e de manter esse processo organizado, do primeiro esboço à versão final.</p>
+          </div>
+          <ul class="about__badges" data-reveal>
+            <li class="badge"><span class="badge__dot" aria-hidden="true"></span>Web Development</li>
+            <li class="badge"><span class="badge__dot" aria-hidden="true"></span>Linux</li>
+            <li class="badge"><span class="badge__dot" aria-hidden="true"></span>Networking</li>
+            <li class="badge"><span class="badge__dot" aria-hidden="true"></span>Problem Solving</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="skills" id="skills">
+      <div class="container">
+        <p class="eyebrow" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Skills</p>
+        <h2 class="section-title" data-reveal>Stack técnica</h2>
+        <p class="section-lede" data-reveal>As ferramentas e tecnologias que uso para transformar ideias em sistemas funcionais.</p>
+
+        <div class="skills__grid">
+          <div class="skill-card" data-reveal>
+            <h3 class="skill-card__title">Frontend</h3>
+            <ul class="skill-card__list">
+              <li>HTML5</li><li>CSS3</li><li>JavaScript</li>
+            </ul>
+          </div>
+          <div class="skill-card" data-reveal>
+            <h3 class="skill-card__title">Backend</h3>
+            <ul class="skill-card__list">
+              <li>PHP</li>
+            </ul>
+          </div>
+          <div class="skill-card" data-reveal>
+            <h3 class="skill-card__title">Database</h3>
+            <ul class="skill-card__list">
+              <li>MySQL</li><li>MariaDB</li>
+            </ul>
+          </div>
+          <div class="skill-card" data-reveal>
+            <h3 class="skill-card__title">Systems</h3>
+            <ul class="skill-card__list">
+              <li>Linux Mint</li><li>Windows</li><li>Bash</li>
+            </ul>
+          </div>
+          <div class="skill-card" data-reveal>
+            <h3 class="skill-card__title">Networking</h3>
+            <ul class="skill-card__list">
+              <li>Modelo OSI</li><li>Endereçamento IP</li><li>LAN</li>
+            </ul>
+          </div>
+          <div class="skill-card" data-reveal>
+            <h3 class="skill-card__title">Tools</h3>
+            <ul class="skill-card__list">
+              <li>VS Code</li><li>XAMPP</li><li>Git</li><li>Microsoft Office</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJETOS ===================== -->
+    <section class="projects" id="projetos">
+      <div class="container">
+        <p class="eyebrow" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Projetos</p>
+        <h2 class="section-title" data-reveal>O que já construí</h2>
+        <p class="section-lede" data-reveal>Sistemas reais, construídos para resolver problemas concretos — sozinho e em equipa.</p>
+
+        <div class="projects__grid">
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__header">
+              <span class="project-card__category">Sistema Web · Individual</span>
+              <h3 class="project-card__title">SysPonto</h3>
+              <p class="project-card__subtitle">Sistema de Gestão Escolar</p>
+            </div>
+            <p class="project-card__desc">Sistema web desenvolvido para gestão escolar, com foco no controlo de presenças, faltas e funcionários.</p>
+            <ul class="project-card__highlights">
+              <li>Dashboard administrativo</li>
+              <li>Gestão de funcionários</li>
+              <li>Registo de presenças</li>
+              <li>Controlo de faltas</li>
+              <li>Relatórios e consultas</li>
+              <li>Arquitetura modular</li>
+            </ul>
+            <div class="project-card__footer">
+              <div class="project-card__tech">
+                <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span>
+              </div>
+              <button type="button" class="project-card__link" disabled aria-label="SysPonto — projeto em breve disponível">
+                <svg class="icon"><use href="#icon-clock"></use></svg>Em breve
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__header">
+              <span class="project-card__category project-card__category--team">Sistema Web · Projeto em Equipa</span>
+              <h3 class="project-card__title">SysPharm</h3>
+              <p class="project-card__subtitle">Sistema de Gestão Farmacêutica</p>
+            </div>
+            <p class="project-card__desc">Projeto de equipa desenvolvido para gestão e controlo farmacêutico.</p>
+            <ul class="project-card__highlights">
+              <li>Dashboards</li>
+              <li>Gestão farmacêutica</li>
+              <li>Controlo de stock</li>
+              <li>Histórico de transações</li>
+              <li>Diferentes perfis de utilizador</li>
+              <li>Colaboração em equipa</li>
+              <li>Testes integrados</li>
+            </ul>
+            <div class="project-card__footer">
+              <div class="project-card__tech">
+                <span class="tech-tag">HTML5</span><span class="tech-tag">CSS3</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PHP</span><span class="tech-tag">MySQL</span>
+              </div>
+              <button type="button" class="project-card__link" disabled aria-label="SysPharm — projeto em breve disponível">
+                <svg class="icon"><use href="#icon-clock"></use></svg>Em breve
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal>
+            <div class="project-card__header">
+              <span class="project-card__category">Sistemas · Experiência Prática</span>
+              <h3 class="project-card__title">Linux Environment</h3>
+              <p class="project-card__subtitle">Experiência com Linux Mint</p>
+            </div>
+            <p class="project-card__desc">Experiência prática com instalação, configuração e utilização de Linux Mint.</p>
+            <ul class="project-card__highlights">
+              <li>Instalação de Linux Mint</li>
+              <li>Dual boot</li>
+              <li>Gestão de partições</li>
+              <li>Utilização de terminal</li>
+              <li>Diagnóstico de drivers</li>
+              <li>Resolução de problemas de hardware</li>
+            </ul>
+            <div class="project-card__footer">
+              <div class="project-card__tech">
+                <span class="tech-tag">Linux Mint</span><span class="tech-tag">Bash</span><span class="tech-tag">Terminal</span>
+              </div>
+              <button type="button" class="project-card__link" disabled aria-label="Linux Environment — projeto em breve disponível">
+                <svg class="icon"><use href="#icon-clock"></use></svg>Em breve
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FORMAÇÃO & EXPERIÊNCIA ===================== -->
+    <section class="timeline" id="formacao">
+      <div class="container">
+        <p class="eyebrow" data-reveal><span class="eyebrow__rule" aria-hidden="true"></span>Formação &amp; Experiência</p>
+        <h2 class="section-title" data-reveal>Percurso</h2>
+
+        <ol class="timeline__list">
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__tag">Formação</span>
+              <h3 class="timeline__title">Curso Técnico em Gestão de Sistemas Informáticos</h3>
+              <p class="timeline__meta">Complexo Escolar Privado Andó · Luanda, Angola</p>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__tag">Desenvolvimento Web</span>
+              <h3 class="timeline__title">Projetos de desenvolvimento web</h3>
+              <p class="timeline__desc">Construção de sistemas completos — SysPonto e SysPharm — aplicando HTML, CSS, JavaScript, PHP e MySQL, de forma individual e em equipa.</p>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__tag">Linux &amp; Sistemas</span>
+              <h3 class="timeline__title">Experiência prática com Linux</h3>
+              <p class="timeline__desc">Instalação e configuração de Linux Mint em ambiente dual boot, gestão de partições, utilização de terminal e diagnóstico de hardware e drivers.</p>
+            </div>
+          </li>
+          <li class="timeline__item" data-reveal>
+            <div class="timeline__marker" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__tag">Redes &amp; Suporte Técnico</span>
+              <h3 class="timeline__title">Fundamentos de redes e suporte técnico</h3>
+              <p class="timeline__desc">Modelo OSI, endereçamento IP e redes locais, com prática em diagnóstico e resolução de problemas, instalação e configuração de software.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACTO ===================== -->
+    <section class="contact" id="contacto">
+      <div class="container contact__grid">
+        <div class="contact__info" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__rule" aria-hidden="true"></span>Contacto</p>
+          <h2 class="section-title">Vamos construir algo juntos.</h2>
+          <p class="section-lede">Estou a começar a minha carreira em tecnologia e aberto a oportunidades, estágios ou projetos. Escreve-me.</p>
+
+          <ul class="contact__list">
+            <li>
+              <svg class="icon"><use href="#icon-mail"></use></svg>
+              <a href="mailto:edersonserafim777@gmail.com">edersonserafim777@gmail.com</a>
+            </li>
+            <li>
+              <svg class="icon"><use href="#icon-phone"></use></svg>
+              <a href="tel:+244943001722">943 001 722</a><span class="contact__sep">/</span><a href="tel:+244953024681">953 024 681</a>
+            </li>
+            <li>
+              <svg class="icon"><use href="#icon-pin"></use></svg>
+              <span>Luanda, Angola</span>
+            </li>
+          </ul>
+
+          <div class="contact__social">
+            <button type="button" class="social-link" disabled aria-label="GitHub — perfil em breve">
+              <svg class="icon"><use href="#icon-github"></use></svg>GitHub<em>Em breve</em>
+            </button>
+            <button type="button" class="social-link" disabled aria-label="LinkedIn — perfil em breve">
+              <svg class="icon"><use href="#icon-linkedin"></use></svg>LinkedIn<em>Em breve</em>
+            </button>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm" data-reveal novalidate>
+          <div class="form-field">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" autocomplete="name" placeholder="O teu nome" required aria-describedby="nameError">
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="teu@email.com" required aria-describedby="emailError">
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-field">
+            <label for="subject">Assunto</label>
+            <input type="text" id="subject" name="subject" placeholder="Sobre o que é?" required aria-describedby="subjectError">
+            <span class="form-error" id="subjectError"></span>
+          </div>
+          <div class="form-field">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" placeholder="A tua mensagem..." required aria-describedby="messageError"></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary form-submit">
+            <span class="form-submit__label">Enviar mensagem</span>
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo/logo-mark-dark.svg" alt="" class="footer__mark" width="36" height="36" loading="lazy">
+        <div>
+          <p class="footer__name">Ederson Serafim</p>
+          <p class="footer__philosophy">Always Learning. Always Building.</p>
+        </div>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navegação do rodapé">
+        <a href="#sobre">Sobre</a>
+        <a href="#skills">Skills</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#formacao">Percurso</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="footer__social">
+        <button type="button" class="social-link social-link--footer" disabled aria-label="GitHub — perfil em breve">
+          <svg class="icon"><use href="#icon-github"></use></svg>
+        </button>
+        <button type="button" class="social-link social-link--footer" disabled aria-label="LinkedIn — perfil em breve">
+          <svg class="icon"><use href="#icon-linkedin"></use></svg>
+        </button>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; <span id="year">2026</span> Ederson Serafim. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>

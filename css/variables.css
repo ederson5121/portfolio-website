@@ -1,0 +1,122 @@
+/* ============================================================
+   Ederson Serafim — Portfolio
+   Design tokens — derivados de docs/BRAND_GUIDELINES.md
+   Petrol Blue #326586 · Sand Mist #F4E9D4 · Amber Gold #D4A017
+   Inter (UI/headings) · JetBrains Mono (elementos técnicos)
+
+   Estratégia de dark mode: os tokens de MARCA (petrol/sand/amber)
+   são constantes — a marca não "inverte" com o tema (ver
+   BRAND_GUIDELINES §3, combinações permitidas). Só os tokens
+   SEMÂNTICOS (bg, texto, superfícies, --color-accent) mudam
+   dentro de [data-theme="dark"]. O resto do CSS aponta sempre
+   para os mesmos nomes de variável — nunca duplica uma regra só
+   para trocar de tema.
+   ============================================================ */
+
+:root {
+  /* ---------- Marca (constantes) ---------- */
+  --color-petrol: #326586;
+  --color-petrol-rgb: 50, 101, 134;
+  --color-petrol-dark: #244a63;
+  --color-sand: #F4E9D4;
+  --color-sand-rgb: 244, 233, 212;
+  --color-amber: #D4A017;
+  --color-amber-rgb: 212, 160, 23;
+  --color-error: #B3261E;
+  --color-error-rgb: 179, 38, 30;
+
+  /* ---------- Semânticos — modo claro (padrão) ---------- */
+  --color-bg: #FAF8F3;
+  --color-bg-rgb: 250, 248, 243;
+  --color-bg-elevated: #FFFFFF;
+  --color-bg-alt: #F1EAD9;
+  --color-heading: #1F2937;
+  --color-text: #1F2937;
+  --color-text-muted: rgba(31, 41, 55, .68);
+  --color-text-faint: rgba(31, 41, 55, .42);
+  --color-border: rgba(50, 101, 134, .16);
+  --color-border-strong: rgba(50, 101, 134, .32);
+  /* --color-accent: cor de destaque sobre o fundo do tema ativo —
+     Petrol Blue em claro, Sand Mist em escuro (ambas combinações
+     permitidas pelo Brand Kit). Usado em eyebrows, ícones de
+     contacto, sublinhados ativos — tudo o que precisaria de um
+     override [data-theme="dark"] só para trocar de cor. */
+  --color-accent: var(--color-petrol);
+  --color-accent-rgb: var(--color-petrol-rgb);
+  --color-focus: var(--color-petrol);
+
+  --shadow-sm: 0 1px 2px rgba(30, 42, 51, .07);
+  --shadow-md: 0 12px 28px -12px rgba(30, 42, 51, .18);
+  --shadow-lg: 0 28px 56px -20px rgba(30, 42, 51, .24);
+
+  /* ---------- Tipografia ---------- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  /* ---------- Forma — eco do rx=3 do monograma: cantos precisos ---------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 999px;
+
+  /* ---------- Movimento ---------- */
+  --ease: cubic-bezier(.4, 0, .2, 1);
+  --dur-fast: 150ms;
+  --dur-base: 240ms;
+  --dur-slow: 480ms;
+
+  /* ---------- Layout ---------- */
+  --container-w: 72rem;
+  --container-pad: 1.25rem;
+  --navbar-h: 76px;
+
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --color-bg: #1E2A33;
+  --color-bg-rgb: 30, 42, 51;
+  --color-bg-elevated: #263542;
+  --color-bg-alt: #202E38;
+  --color-heading: #F4E9D4;
+  --color-text: rgba(244, 233, 212, .82);
+  --color-text-muted: rgba(244, 233, 212, .60);
+  --color-text-faint: rgba(244, 233, 212, .38);
+  --color-border: rgba(244, 233, 212, .14);
+  --color-border-strong: rgba(244, 233, 212, .28);
+  --color-accent: var(--color-sand);
+  --color-accent-rgb: var(--color-sand-rgb);
+  --color-focus: var(--color-sand);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .28);
+  --shadow-md: 0 12px 28px -12px rgba(0, 0, 0, .45);
+  --shadow-lg: 0 28px 56px -20px rgba(0, 0, 0, .55);
+
+  color-scheme: dark;
+}
+
+/* Sem JS, sem localStorage: seguir a preferência do sistema como
+   segunda linha de defesa. O inline script no <head> trata o caso
+   comum (JS ligado) antes do primeiro paint; isto cobre o visitante
+   raro sem JavaScript e sem tema guardado. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --color-bg: #1E2A33;
+    --color-bg-rgb: 30, 42, 51;
+    --color-bg-elevated: #263542;
+    --color-bg-alt: #202E38;
+    --color-heading: #F4E9D4;
+    --color-text: rgba(244, 233, 212, .82);
+    --color-text-muted: rgba(244, 233, 212, .60);
+    --color-text-faint: rgba(244, 233, 212, .38);
+    --color-border: rgba(244, 233, 212, .14);
+    --color-border-strong: rgba(244, 233, 212, .28);
+    --color-accent: var(--color-sand);
+    --color-accent-rgb: var(--color-sand-rgb);
+    --color-focus: var(--color-sand);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .28);
+    --shadow-md: 0 12px 28px -12px rgba(0, 0, 0, .45);
+    --shadow-lg: 0 28px 56px -20px rgba(0, 0, 0, .55);
+    color-scheme: dark;
+  }
+}
