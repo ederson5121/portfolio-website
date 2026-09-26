@@ -1,6 +1,6 @@
-# Ederson Serafim Malanda — Portfólio
+# Ederson Serafim Malanda
 
-Portfólio pessoal de **Ederson Serafim Malanda**, estudante de Gestão de Sistemas Informáticos, residente em Luanda, Angola.
+Este é o meu portfólio pessoal, estudante de Gestão de Sistemas Informáticos, residente em Luanda, Angola.
 
 O projeto apresenta o meu percurso, competências, formação e interesses na área de tecnologia através de uma landing page moderna, responsiva e otimizada para funcionar sem dependências externas.
 
